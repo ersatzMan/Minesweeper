@@ -1,13 +1,15 @@
-﻿namespace Minesweeper;
+﻿using MinesweeperChallenge.Interfaces;
 
-internal sealed class Cell
+namespace MinesweeperChallenge.Games.Minesweeper;
+
+public sealed class MinesweeperCell : ICell
 {
-    public bool Revealed { get; private set; }
-    public bool Mined { get; private set; }
-    public bool Exploded { get; private set; }
-    public bool Flagged { get; private set; }
-    public bool Checked { get; private set; }
-    public int? NearbyMines { get; private set; }
+    internal bool Revealed { get; private set; }
+    internal bool Mined { get; private set; }
+    internal bool Exploded { get; private set; }
+    internal bool Flagged { get; private set; }
+    internal bool Checked { get; private set; }
+    internal int? NearbyMines { get; private set; }
 
     public void SetNearbyMines(int nearbyMines) => NearbyMines = nearbyMines;
 

@@ -1,44 +1,16 @@
-﻿using Minesweeper;
+﻿using Microsoft.Extensions.DependencyInjection;
+using MinesweeperChallenge.Games.Minesweeper;
+using MinesweeperChallenge.Games.Minewalker;
+using MinesweeperChallenge.Hosting;
+using MinesweeperChallenge.Interfaces;
 
-do
-{
-    RunGame();
-    Console.WriteLine(Game.PlayAgainPrompt);
-} while (Console.ReadKey().KeyChar != 'N');
+var serviceProvider = new ServiceCollection()
+    .AddScoped<TurnBasedGameHost>()
+    .AddScoped<ITurnBasedGame, MinewalkerGame>()
+    .AddScoped<ITurnBasedRenderer, BoringMinewalkerRenderer>()
+    //.AddScoped<ITurnBasedGame, MinesweeperGame>()
+    //.AddScoped<ITurnBasedRenderer, BoringMinesweeperRenderer>()
+    .AddScoped<IConsoleInput, ConsoleInput>()
+    .BuildServiceProvider();
 
-return;
-
-static void RunGame()
-{
-    var game = new Game();
-    Game.Build();
-
-    while (game.State == Game.GameState.InProgress)
-    {
-        Game.Draw();
-
-        game.Play(
-            PromptUntilValid(game.PrintMovePrompt, game.ValidateMove)!,
-            (int)PromptUntilValid(Game.ChooseXPrompt, c => Game.ValidateDimension(c))!,
-            (int)PromptUntilValid(Game.ChooseYPrompt, c => Game.ValidateDimension(c, false))!
-        );
-    }
-
-    Game.Draw();
-
-    Console.WriteLine(game.ResultPrompt);
-}
-
-static T PromptUntilValid<T>(string prompt, Func<char, T> validator)
-{
-    T result;
-
-    do
-    {
-        Console.WriteLine(prompt);
-        result = validator(Console.ReadKey().KeyChar);
-        Console.WriteLine();
-    } while (result == null);
-
-    return result;
-}
+serviceProvider.GetService<TurnBasedGameHost>()!.Run();

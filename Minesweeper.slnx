@@ -1,4 +1,4 @@
 <Solution>
-  <Project Path="../Minesweeper.Tests/MinesweeperChallenge.Tests.csproj" Id="1550ba48-a87b-425d-b9de-22509c5de117" />
+  <Project Path="../Minesweeper.Tests/MinesweeperChallenge.Tests.csproj" />
   <Project Path="MinesweeperChallenge.csproj" />
 </Solution>

@@ -1,10 +1,9 @@
-﻿using MinesweeperChallenge.Enums;
-using MinesweeperChallenge.Extensions;
-using MinesweeperChallenge.Games.Minewalker;
-using MinesweeperChallenge.Interfaces;
+﻿using Minesweeper.Enums;
+using Minesweeper.Games.Minewalker;
+using Minesweeper.Interfaces;
 using Moq;
 
-namespace MinesweeperChallenge.Tests;
+namespace Minesweeper.Tests;
 
 [TestClass]
 public sealed class MinewalkerGameTests
@@ -43,7 +42,7 @@ public sealed class MinewalkerGameTests
         Assert.AreEqual('F', grid[7, 0].Draw());
 
         //the rest
-        Assert.IsTrue(grid.ToArray().Select(cell => cell.Draw()).Where(ch => ch is not ('O' or 'F')).All(ch => ch == ' '));
+        Assert.IsTrue(Enumerable.Select<ICell, char>(grid.ToArray(), cell => cell.Draw()).Where(ch => ch is not ('O' or 'F')).All(ch => ch == ' '));
     }
 
     [TestMethod]
@@ -51,7 +50,7 @@ public sealed class MinewalkerGameTests
     {
         _sut!.Build();
 
-        Assert.AreEqual(10, _sut.Grid.ToArray().Count(cell => cell.Mined));
+        Assert.AreEqual(10, Enumerable.Count<MinewalkerCell>(_sut.Grid.ToArray(), cell => cell.Mined));
     }
 
     /*Note: I ran out of time for the remaining tests, which were written by Github Copilot using the prompt:

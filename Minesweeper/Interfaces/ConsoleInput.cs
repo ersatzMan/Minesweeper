@@ -1,4 +1,4 @@
-﻿namespace MinesweeperChallenge.Interfaces;
+﻿namespace Minesweeper.Interfaces;
 
 public class ConsoleInput : IConsoleInput
 {

@@ -1,8 +1,8 @@
-﻿using MinesweeperChallenge.Enums;
-using MinesweeperChallenge.Extensions;
-using MinesweeperChallenge.Interfaces;
+﻿using Minesweeper.Enums;
+using Minesweeper.Extensions;
+using Minesweeper.Interfaces;
 
-namespace MinesweeperChallenge.Games.Minesweeper;
+namespace Minesweeper.Games.Minesweeper;
 
 public sealed class MinesweeperGame(IConsoleInput console) : ITurnBasedGame
 {

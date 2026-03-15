@@ -1,4 +1,4 @@
-﻿namespace MinesweeperChallenge.Enums;
+﻿namespace Minesweeper.Enums;
 
 public enum GameState
 {

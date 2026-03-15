@@ -1,6 +1,6 @@
-﻿using MinesweeperChallenge.Interfaces;
+﻿using Minesweeper.Interfaces;
 
-namespace MinesweeperChallenge.Games.Minesweeper;
+namespace Minesweeper.Games.Minesweeper;
 
 public sealed class MinesweeperCell : ICell
 {

@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using MinesweeperChallenge.Games.Minesweeper;
-using MinesweeperChallenge.Games.Minewalker;
-using MinesweeperChallenge.Hosting;
-using MinesweeperChallenge.Interfaces;
+using Minesweeper.Games.Minesweeper;
+using Minesweeper.Games.Minewalker;
+using Minesweeper.Hosting;
+using Minesweeper.Interfaces;
 
 var serviceProvider = new ServiceCollection()
     .AddScoped<TurnBasedGameHost>()

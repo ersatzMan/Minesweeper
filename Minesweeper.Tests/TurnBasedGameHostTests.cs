@@ -1,9 +1,9 @@
-﻿using MinesweeperChallenge.Hosting;
-using MinesweeperChallenge.Enums;
-using MinesweeperChallenge.Interfaces;
+﻿using Minesweeper.Enums;
+using Minesweeper.Hosting;
+using Minesweeper.Interfaces;
 using Moq;
 
-namespace MinesweeperChallenge.Tests;
+namespace Minesweeper.Tests;
 
 [TestClass]
 public sealed class TurnBasedGameHostTests

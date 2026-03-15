@@ -1,8 +1,8 @@
-﻿using MinesweeperChallenge.Enums;
-using MinesweeperChallenge.Extensions;
-using MinesweeperChallenge.Interfaces;
+﻿using Minesweeper.Enums;
+using Minesweeper.Extensions;
+using Minesweeper.Interfaces;
 
-namespace MinesweeperChallenge.Games.Minewalker;
+namespace Minesweeper.Games.Minewalker;
 
 public class MinewalkerGame(IConsoleInput console) : ITurnBasedGame
 {

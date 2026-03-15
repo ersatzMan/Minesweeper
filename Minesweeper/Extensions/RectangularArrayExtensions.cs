@@ -1,6 +1,6 @@
-﻿using MinesweeperChallenge.Interfaces;
+﻿using Minesweeper.Interfaces;
 
-namespace MinesweeperChallenge.Extensions;
+namespace Minesweeper.Extensions;
 
 public static class RectangularArrayExtensions
 {

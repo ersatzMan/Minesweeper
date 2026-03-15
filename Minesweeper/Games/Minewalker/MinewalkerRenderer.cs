@@ -1,6 +1,6 @@
-﻿using MinesweeperChallenge.Interfaces;
+﻿using Minesweeper.Interfaces;
 
-namespace MinesweeperChallenge.Games.Minewalker;
+namespace Minesweeper.Games.Minewalker;
 
 public class MinewalkerRenderer : ITurnBasedRenderer
 {

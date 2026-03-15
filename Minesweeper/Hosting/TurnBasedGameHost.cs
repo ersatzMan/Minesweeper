@@ -1,7 +1,7 @@
-﻿using MinesweeperChallenge.Enums;
-using MinesweeperChallenge.Interfaces;
+﻿using Minesweeper.Enums;
+using Minesweeper.Interfaces;
 
-namespace MinesweeperChallenge.Hosting;
+namespace Minesweeper.Hosting;
 
 /// <summary>
 /// Host consuming an implementation of <see cref="ITurnBasedGame"/>, encapsulating a simple turn-based game flow.

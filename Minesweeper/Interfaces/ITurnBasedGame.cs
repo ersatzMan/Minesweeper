@@ -1,6 +1,6 @@
-﻿using MinesweeperChallenge.Enums;
+﻿using Minesweeper.Enums;
 
-namespace MinesweeperChallenge.Interfaces;
+namespace Minesweeper.Interfaces;
 
 public interface ITurnBasedGame
 {

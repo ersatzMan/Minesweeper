@@ -1,4 +1,4 @@
-﻿namespace MinesweeperChallenge.Extensions;
+﻿namespace Minesweeper.Extensions;
 
 public static class GridExtensions
 {

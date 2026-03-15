@@ -7,9 +7,9 @@ using MinesweeperChallenge.Interfaces;
 var serviceProvider = new ServiceCollection()
     .AddScoped<TurnBasedGameHost>()
     .AddScoped<ITurnBasedGame, MinewalkerGame>()
-    .AddScoped<ITurnBasedRenderer, BoringMinewalkerRenderer>()
+    .AddScoped<ITurnBasedRenderer, MinewalkerRenderer>()
     //.AddScoped<ITurnBasedGame, MinesweeperGame>()
-    //.AddScoped<ITurnBasedRenderer, BoringMinesweeperRenderer>()
+    //.AddScoped<ITurnBasedRenderer, FancierMinesweeperRenderer>()
     .AddScoped<IConsoleInput, ConsoleInput>()
     .BuildServiceProvider();
 

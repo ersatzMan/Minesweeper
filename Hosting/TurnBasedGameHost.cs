@@ -6,7 +6,7 @@ namespace MinesweeperChallenge.Hosting;
 /// <summary>
 /// Host consuming an implementation of <see cref="ITurnBasedGame"/>, encapsulating a simple turn-based game flow.
 /// </summary>
-public class TurnBasedGameHost(ITurnBasedGame game, ITurnBasedRenderer renderer) 
+public class TurnBasedGameHost(ITurnBasedGame game, ITurnBasedRenderer renderer, IConsoleInput console) 
 {
     public void Run()
     {
@@ -19,13 +19,13 @@ public class TurnBasedGameHost(ITurnBasedGame game, ITurnBasedRenderer renderer)
             //Loop until you win or lose
             while (game.GetState() == GameState.InProgress)
             {
-                grid = game.Play();            //Read player input, print output (if any) and react accordingly.
+                grid = game.Play();     //Read player input, print output (if any) and react accordingly.
                 renderer.Render(grid);  //Draw the game field for a turn.
             }
 
             //Draw the game's end state.
-            Console.WriteLine(game.GameOverMessage);
-            Console.WriteLine("Press any key to play again.");
-        } while (Console.ReadKey().KeyChar != 'N');
+            console.WriteLine(game.GameOverMessage);
+            console.WriteLine("Press any key to play again.");
+        } while (console.ReadKey().KeyChar != 'N');
     }
 }

@@ -2,8 +2,10 @@
 
 namespace MinesweeperChallenge.Games.Minewalker;
 
-public class BoringMinewalkerRenderer : ITurnBasedRenderer
+public class MinewalkerRenderer : ITurnBasedRenderer
 {
+    // This rendering implementation is really inefficient as it redraws the entire board on each call. A better approach would perhaps be to cache the previous grid and compare it to the
+    // previous one, updating only the changed cells.
     public void Render(ICell[,] grid)
     {
         Console.Clear();

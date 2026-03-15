@@ -4,4 +4,5 @@ public class ConsoleInput : IConsoleInput
 {
     public ConsoleKeyInfo ReadKey() => Console.ReadKey(true);
     public string? ReadLine() => Console.ReadLine();
+    public void WriteLine(string? value) => Console.WriteLine(value);
 }

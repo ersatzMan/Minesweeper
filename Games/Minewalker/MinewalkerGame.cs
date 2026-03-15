@@ -14,7 +14,7 @@ public class MinewalkerGame(IConsoleInput console) : ITurnBasedGame
 
     internal int Lives = 2;
 
-    //Really this should use the IOptions pattern to set the game parameters, but I ran out of time.
+    //Really this should use the IOptions pattern or similar to allow for setting game parameters based on either user input or config (e.g. appsettings.json), but I ran out of time.
     public ICell[,] Build()
     {
         const int width = 8;

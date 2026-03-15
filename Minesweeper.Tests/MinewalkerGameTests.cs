@@ -1,6 +1,7 @@
 ﻿using Minesweeper.Enums;
 using Minesweeper.Games.Minewalker;
 using Minesweeper.Interfaces;
+using Minesweeper.Extensions;
 using Moq;
 
 namespace Minesweeper.Tests;
